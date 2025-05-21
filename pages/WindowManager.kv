@@ -1,0 +1,289 @@
+# main.kv
+
+ScreenManager:
+    LoginScreen:
+    RegisterScreen:
+    role1Screen:
+    role2Screen:
+    role3Screen:
+    role4Screen:
+
+<LoginScreen>:
+    name: 'login_screen'
+
+    MDCard:
+        size_hint: None, None
+        size: 800, 800
+        pos_hint: {"center_x": 0.5, "center_y": 0.4}  # Adjusted pos_hint
+        md_bg_color: 0, 0, 0, 0
+        padding: 50
+        spacing: 50
+        orientation: 'vertical'
+
+        canvas:
+            Color:
+                rgba: 0.55, 0.87, 0.91, 1
+            Line:
+                rectangle: self.x, self.y, self.width, self.height
+                width: 2
+
+        Image:
+            source: 'images/logo.png'
+            size_hint_y: None
+            height: 300
+            width: 300
+            halign: 'center'
+
+        MDLabel:
+            text: "Login to WWO dashboard"
+            font_size: 50
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 75
+
+        MDTextField:
+            id: user
+            hint_text: "username"
+            icon_right: "account"
+            size_hint_x: None
+            width: 500
+            font_size: 30
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: password
+            hint_text: "password"
+            icon_right: "eye-off"
+            size_hint_x: None
+            width: 500
+            font_size: 30
+            pos_hint: {"center_x": 0.5}
+            password: True
+
+        MDRoundFlatButton:
+            text: "LOG IN"
+            font_size: 30
+            line_width: 2
+            pos_hint: {"center_x": 0.5}
+            on_press: root.login()
+
+        MDFillRoundFlatIconButton:
+            id: register_label
+            text: "[color=#3498db]Don't have an account?[/color] [color=#2ecc71]Register[/color]"
+            font_size: 30
+            markup: True
+            pos_hint: {"center_x": 0.5, "center_y": 0.2}
+            md_bg_color: 0, 0, 0, 0
+            on_press:
+                root.navigate_to_register()
+
+        MDLabel:
+            id: error_label_login
+            text: ""
+            theme_text_color: "Error"
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Widget:
+            size_hint_y: None
+            height: 20
+
+<RegisterScreen>:
+    name: 'register_screen'
+
+    MDCard:
+        size_hint: None, None
+        size: 800, 900
+        pos_hint: {"center_x": 0.5, "center_y": 0.4}  # Adjusted pos_hint
+        md_bg_color: 0, 0, 0, 0
+        padding: 50
+        spacing: 50
+        orientation: 'vertical'
+
+        canvas:
+            Color:
+                rgba: 0.55, 0.87, 0.91, 1
+            Line:
+                rectangle: self.x, self.y, self.width, self.height
+                width: 2
+
+        Image:
+            source: 'images/logo.png'
+            size_hint_y: None
+            height: 300
+            width: 300
+            halign: 'center'
+
+        MDLabel:
+            text: "Register to WWO dashboard"
+            font_size: 50
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+
+
+        MDTextField:
+            id: employee_id
+            hint_text: "employee id"
+            icon_right: "account"
+            size_hint_x: None
+            width: 500
+            font_size: 30
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: password_register
+            hint_text: "password"
+            icon_right: "eye-off"
+            size_hint_x: None
+            width: 500
+            font_size: 30
+            pos_hint: {"center_x": 0.5}
+            password: True
+
+        MDRoundFlatButton:
+            text: "Register"
+            font_size: 30
+            line_width: 2
+            pos_hint: {"center_x": 0.5}
+            on_press: root.register()
+
+        MDFillRoundFlatIconButton:
+            id: login_label
+            text: "[color=#3498db]Already have an account?[/color] [color=#2ecc71]Login[/color]"
+            font_size: 30
+            markup: True
+            pos_hint: {"center_x": 0.5, "center_y": 0.2}
+            md_bg_color: 0, 0, 0, 0
+            on_press:
+                root.navigate_to_login()
+
+        MDLabel:
+            id: error_label_register
+            text: ""
+            theme_text_color: "Error"
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Widget:
+            size_hint_y: None
+            height: 20
+
+<role1Screen>:
+    name: 'role1_screen'
+
+    MDCard:
+        size_hint: None, None
+        size: 800, 900
+        pos_hint: {"center_x": 0.5, "center_y": 0.4}  # Adjusted pos_hint
+        md_bg_color: 0, 0, 0, 0
+        padding: 50
+        spacing: 50
+        orientation: 'vertical'
+
+        canvas:
+            Color:
+                rgba: 0.55, 0.87, 0.91, 1
+            Line:
+                rectangle: self.x, self.y, self.width, self.height
+                width: 2
+
+        Image:
+            source: 'images/logo.png'
+            size_hint_y: None
+            height: 300
+            width: 300
+            halign: 'center'
+
+        MDLabel:
+            id: label_role1
+            text: ""
+            font_size: 50
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 75
+
+        MDRoundFlatButton:
+            text: 'Generate Report'
+            font_size: 40
+            pos_hint: {'center_x': 0.5}
+            on_press: root.generate_report()
+
+        MDRoundFlatButton:
+            text: 'Manage Accounts'
+            font_size: 40
+            pos_hint: {'center_x': 0.5}
+            on_press: root.manage_accounts()
+
+        MDRoundFlatButton:
+            text: 'Generate System Log'
+            font_size: 40
+            pos_hint: {'center_x': 0.5}
+            on_press: root.generate_system_log()
+
+        MDRoundFlatButton:
+            text: 'Assign Tasks'
+            font_size: 40
+            pos_hint: {'center_x': 0.5}
+            on_press: root.assign_tasks()
+
+        MDRoundFlatButton:
+            text: 'Edit Permissions'
+            font_size: 40
+            pos_hint: {'center_x': 0.5}
+            on_press: root.edit_permissions()
+
+        MDRoundFlatButton:
+            text: 'Log out'
+            font_size: 40
+            pos_hint: {'center_x': 0.5}
+            on_press: root.log_out()
+
+        Widget:
+            size_hint_y: None
+            height: 20
+
+
+<role2Screen>:
+    name: 'role2_screen'
+    MDLabel:
+        id: welcome_label
+        text: ""
+        font_size: 30
+        padding_y: self.height / 2
+        halign: 'center'
+
+    Widget:
+        size_hint_y: None
+        height: 20
+
+<role3Screen>:
+    name: 'role3_screen'
+    MDLabel:
+        id: welcome_label
+        text: ""
+        font_size: 30
+        padding_y: self.height / 2
+        halign: 'center'
+
+    Widget:
+        size_hint_y: None
+        height: 20
+
+<role4Screen>:
+    name: 'role4_screen'
+    MDLabel:
+        id: welcome_label
+        text: ""
+        font_size: 30
+        padding_y: self.height / 2
+        halign: 'center'
+
+    Widget:
+        size_hint_y: None
+        height: 20

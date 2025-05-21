@@ -1,0 +1,9 @@
+2024-01-05 19:03:39 - LOGIN - User 'admin' (ID: 0) logged in successfully.
+2024-01-05 19:03:47 - LOGIN - User 'admin' (ID: 0) logged in successfully.
+2024-01-05 19:03:55 - LOGIN - User 'admin' (ID: 0) logged in successfully.
+2024-01-05 19:20:30 - LOGIN - User 'admin' (ID: 0) logged in successfully.
+2024-01-05 19:20:47 - ERROR - IntegrityError: ORA-00001: unique constraint (HR.USER_DATA_PK) violated using Sanaa Tendaji with id 36
+2024-01-05 19:21:01 - LOGIN - User 'admin' (ID: 0) logged in successfully.
+2024-01-05 19:21:45 - LOGIN - User 'Sanaa Tendaji' (ID: 36) logged in successfully.
+2024-01-05 19:38:59 - LOGIN - User 'admin' (ID: 0) logged in successfully.
+2024-01-05 22:43:54 - LOGIN - User 'admin' (ID: 0) logged in successfully.
